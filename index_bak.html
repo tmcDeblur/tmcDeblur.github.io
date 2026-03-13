@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XB3PR2Y1TQ"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-XB3PR2Y1TQ');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <meta property="og:site_name" content="EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior" />
+    <meta property="og:description" content="EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior, 2022." />
+    <meta property="og:url" content="https://efficientdreamer.github.io/" />
+    <meta property="og:image" content="https://efficientdreamer.github.io/assets/images/dreamfusion_samples.png" />
+
+    <meta property="article:publisher" content="https://efficientdreamer.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior" />
+    <meta name="twitter:description" content="We combine neural rendering with a multi-modal text-to-2D image diffusion generative model to synthesize diverse 3D objects from text." />
+    <meta name="twitter:url" content="https://efficientdreamer.github.io/" />
+    <meta name="twitter:image" content="https://efficientdreamer.github.io/assets/images/dreamfusion_samples.png" />
+    <!-- <meta name="twitter:site" content="" /> -->
+
+    <script src="assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+    <!-- <div class="banner">
+      <video class="video lazy"
+          poster="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.jpg"
+          autoplay loop playsinline muted>
+        <source data-src="https://dreamfusion-cdn.ajayj.com/sept28/banner_1x6_customhue_A.mp4" type="video/mp4"></source>
+      </video>
+    </div> -->
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        
+        <div class="container" style="max-width: 1024px;">
+            <h1 class="text-center"><b>EfficientDreamer</b>: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior</h1>
+        </div>
+        <div class="container" style="max-width: 1024px;">
+<!--            <p id="authors" class="text-center">-->
+<!--                <a href="mailto:zhaominda01@corp.netease.com">Minda Zhao<sup>1</sup></a>-->
+<!--                <a  href="mailto:zhaochaoyi@corp.netease.com">Chaoyi Zhao<sup>1</sup></a>-->
+<!--                <a href="mailto:liangxinyue03@corp.netease.com">Xinyue Liang<sup>1</sup></a>-->
+<!--                <a href="mailto:lilincheng@corp.netease.com">Lincheng Li<sup>1</sup></a>-->
+<!--                <a href="mailto:hzzhaozeng@corp.netease.com">Zeng Zhao<sup>1</sup></a>-->
+<!--                <a href="mailto:zphu@corp.netease.com">Zhipeng Hu<sup>1</sup></a>-->
+<!--                <a href="mailto:fanchangjie@corp.netease.com">Changjie Fan<sup>1</sup></a>-->
+<!--                <a href="mailto:xin.yu@uq.edu.au">Xin Yu<sup>2</sup></a>-->
+
+<!--                <br>-->
+<!--                <span style="font-size: 0.8em; margin-top: 0.5em">-->
+<!--                <a><sup>1</sup> NetEase Fuxi AI Lab</a>-->
+<!--                <a><sup>2</sup> University of Queensland</a>-->
+<!--                </span>-->
+<!--            </p>-->
+            
+            <!-- <div class="row authors">
+                <div class="col-sm-3">
+                    <h5 class="text-center"><a class="text-center" href="https://cs.stanford.edu/~poole/">Minda Zhao</a></h5>
+                    <h6 class="text-center">Google Research</h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center"><a href="https://ajayj.com">Ajay Jain</a></h5>
+                    <h6 class="text-center">UC Berkeley</h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center"><a class="text-center" href="https://jonbarron.info/">Jonathan T. Barron</a></h5>
+                    <h6 class="text-center">Google Research</h6>
+                </div>
+                <div class="col-sm-3">
+                    <h5 class="text-center"><a class="text-center" href="https://bmild.github.io/">Ben Mildenhall</a></h5>
+                    <h6 class="text-center">Google Research</h6>
+                </div>
+            </div>     -->
+        </div>
+
+
+
+
+        <div class="buttons" style="margin-bottom: 8px;">
+            <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2308.13223">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                    <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+                </svg>Paper
+            </a>
+            <a class="btn btn-light" role="button" href="https://github.com/EfficientDreamer/EfficientDreamer">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 375 531">
+                    <path fill="currentColor" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path>
+                </svg>
+                Project
+            </a>
+            <!-- <a class="btn btn-light" role="button" href="/gallery.html">
+                <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                    <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
+                </svg>
+                Gallery
+            </a> -->
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1024px;">
+        <img class="summary-img" src="figs/teaser_v5.png" style="width:100%;"> <br>
+    </div>
+    
+    <hr class="divider" />
+    <div class="container" style="max-width: 1024px;">
+        
+        
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Abstract</h2>
+                <p>
+                    <!-- <strong> -->
+                        While the image diffusion model has made significant strides in text-driven 3D content creation, it often falls short in accurately capturing the intended meaning of the text prompt, particularly with respect to direction information. This shortcoming gives rise to the Janus problem, where multi-faced 3D models are produced with the guidance of such diffusion models. In this paper, we present a robust pipeline for generating high-fidelity 3D content with orthogonal-view image guidance. Specifically, we introduce a novel 2D diffusion model that generates an image consisting of four orthogonal-view sub-images for the given text prompt. The 3D content is then created with this diffusion model, which enhances 3D consistency and provides strong structured semantic priors. This addresses the infamous Janus problem and significantly promotes generation efficiency. Additionally, we employ a progressive 3D synthesis strategy that results in substantial improvement in the quality of the created 3D contents. Both quantitative and qualitative evaluations show that our method demonstrates a significant improvement over previous text-to-3D techniques.
+                    <!-- </strong> -->
+                </p>
+            </div>
+        </div>
+
+        <img class="summary-img" src="figs/pipeline_v5.png" style="width:100%;"> <br>
+
+    </div>
+
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 1024px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Example generated objects</h2>
+                <p>EfficientDreamer generates objects and scenes from diverse captions.</p>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/19_ours.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A squirrel, animated movie character, high detail 3d model.</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex2" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/10_ours.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex2Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A DSLR photo of a yellow duck.</h6>
+            </div>
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/15_ours.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A pig wearing a backpack, high quality.</h6>
+            </div>
+
+            
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/1_crop.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Viking axe fantasy, weapon, blender, 8k, HD.</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex5" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/6_crop.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex5Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Mr Bean Cartoon doing a T Pose.</h6>
+            </div>
+
+            <div class="col-4">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex6" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source src="normals/7_crop.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex6Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A motorcycle, scifi, high detail, high quality.</h6>
+            </div>
+        </div>
+    </div>
+
+
+    <hr class="divider" />
+    <div class="container meshes" id="meshContainer" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Mesh exports</h2>
+                <p>Our generated NeRF models can be exported to meshes using the marching cubes algorithm for easy integration into 3D renderers or modeling software.</p>
+            </div>
+        </div>
+    </div>
+    <hr class="divider" />
+    
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 1024px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Example generated objects</h2>
+                <p>EfficientDreamer generates objects and scenes from diverse captions.</p>
+            </div>
+        </div>
+
+        <div class="row captioned_videos">
+            <div class="col">
+                <div class="video-compare-container" style="width: 100%">
+                    <video  width="100%" loop autoplay muted>
+                        <source src="mp4/19_compare.mp4" type="video/mp4">
+                    </video>
+                    <p class="text-center"><em>A squirrel, animated movie character, high detail 3d model.</em>  </p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="video-compare-container" style="width: 100%">
+                    <video  width="100%" loop autoplay muted>
+                        <source src="mp4/19_compare.mp4" type="video/mp4">
+                    </video>
+                    <p class="text-center"><em>A squirrel, animated movie character, high detail 3d model.</em>  </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+    
+    <hr class="divider" />
+
+    <div class="container" style="max-width: 1024px;">
+        
+        <div class="row">
+            <div class="col-md-12">
+                <h2>More Results</h2> <br>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <div class="container" style="max-width: 900px;">
+
+        <div class="row">
+            <div class="col">
+              <h6 class="text-center">DreamFusion</h6>
+            </div>
+            <div class="col">
+              <h6 class="text-center">Magic3D</h6>
+            </div>
+            <div class="col">
+              <h6 class="text-center">TextMesh</h6>
+            </div>
+            <div class="col">
+              <h6 class="text-center">Ours&nbsp;&nbsp;</h6>
+            </div>
+            
+
+            <!-- <div class="col">
+            <p class="text-center">DreamFusion</p>
+            </div>
+            <div class="col">
+            <p class="text-center">Magic3D</p>
+            </div>
+            <div class="col">
+            <p class="text-center">TextMesh</p>
+            </div>
+            <div class="col">
+                <p class="text-center">Ours&nbsp;&nbsp;</p>
+            </div> -->
+          </div>
+        
+        <!-- <div class="row captioned_videos" id="res_2" style="margin-top: 0px; margin-bottom: 0px ;">
+        </div> -->
+
+        <div class="row captioned_videos"></div>
+            <div>
+                <video  width="100%" loop autoplay muted>
+                    <source src="mp4/19_compare.mp4" type="video/mp4">
+                </video>
+                <p class="text-center"><em>A squirrel, animated movie character, high detail 3d model.</em>  </p>
+                
+                <video  width="100%" loop autoplay muted>
+                    <source src="mp4/15_compare.mp4" type="video/mp4">
+                </video>
+                <p class="text-center"><em>A pig wearing a backpack, high quality.</em>  </p>
+            </div>
+           
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/10_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A DSLR photo of a yellow duck.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/0_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a corgi taking a selfie, high detail.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/1_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a fox holding a videogame controller.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/20_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>An astronaut is riding a horse, high detail 3d model.</em>  </p>
+
+            <!-- <video  width="100%" loop autoplay muted>
+                <source src="mp4/17_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A rabbit, animated movie character, high detail 3d model.</em>  </p> -->
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/2_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a German Sheperd.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/5_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of an adorable cottage with a thatched roof.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/3_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a toy robot.</em>  </p>
+            
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/6_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of an exercise bike.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/4_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a white rabbits.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/8_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A blue poison-dart frog sitting on a water lily, high detail 3d model.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/11_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A ladybug, high_detail, high_quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/9_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A DSLR photo of a chow chow puppy, high detail, high quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/12_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A lion reading the newspaper.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/13_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A panda rowing a boat in a pond, high detail, high quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/14_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A peacock on a surfboard.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/16_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A product photo of a toy tank, high detail 3d model.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/18_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A recliner chair.</em>  </p>
+
+            <!-- <video  width="100%" loop autoplay muted>
+                <source src="mp4/7_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A baby bunny sitting on top of a stack of pancake.</em>  </p> -->
+            
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/21_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D model of a road bike.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/22_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Viking axe fantasy, weapon, blender, 8k, HD.</em>  </p>
+            
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/23_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Dragon_armor, 3D_asset.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/24_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A photo of a horse_walking.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/25_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>TRUMP figure, high_detail, high_quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/26_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Pikachu with hat, high detail, high quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/27_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Mr Bean Cartoon doing a T Pose.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/28_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A motorcycle, scifi.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/29_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Katana, high detail, high quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/30_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Darth Vader helmet, highly detailed, high quality.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/31_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Corgi riding a rocket.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/32_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>Army Jacket.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/33_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A statue of angel.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/34_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A squirrel playing guitar.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/35_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A ghost eating a hamburger.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/36_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A crab, low_poly.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/37_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A bulldog wearing a black pirate hat.</em>  </p>
+
+            <video  width="100%" loop autoplay muted>
+                <source src="mp4/38_compare.mp4" type="video/mp4">
+            </video>
+            <p class="text-center"><em>A 3D scan of AK47, weapon.</em>  </p>
+
+
+
+        </div>
+
+    </div>
+
+    
+    <hr class="divider" />
+    <div class="container" style="max-width: 1024px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @article{zhao2023efficientdreamer,<br>
+                    &nbsp; author = {Zhao, Minda and Zhao, Chaoyi and Liang, Xinyue and Li, Lincheng and Zhao, Zeng and Hu, Zhipeng and Fan, Changjie and Zhou, Xiaowei and Yu, Xin},<br>
+                    &nbsp; title  = {EfficientDreamer: High-Fidelity and Robust 3D Creation via Orthogonal-view Diffusion Prior},<br>
+                    &nbsp; journal = {arXiv preprint arXiv:2308.13223},<br>
+                    &nbsp; year   = {2023},<br>
+                }</code>
+            </div>
+        </div>
+    
+    <div class="content">
+        <p class="serif">
+            Project page template is borrowed from <a href="https://github.com/dreamfusion3d/dreamfusion3d.github.io">DreamFusion</a>.
+        </p>
+        </div>
+
+    <!-- Import the component -->
+</body>
+
+</html>
