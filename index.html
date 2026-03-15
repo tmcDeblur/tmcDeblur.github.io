@@ -88,11 +88,11 @@
                 <!-- 第一排5人 -->
                 <div class="row authors justify-content-center">
                     <div class="col-sm-auto">
-                        <h4 class="text-center"><a class="text-center">Yapeng Meng</a></h4>
+                        <h4 class="text-center"><a class="text-center" href="https://yapengmeng.github.io/" target="_blank" rel="noopener noreferrer">Yapeng Meng</a>$^\dagger$</h4>
                         <h5 class="text-center">Tsinghua University</h5>
                     </div>
                     <div class="col-sm-auto">
-                        <h4 class="text-center"><a class="text-center">Lin Yang</a></h4>
+                        <h4 class="text-center"><a class="text-center">Lin Yang$^\dagger$</a></h4>
                         <h5 class="text-center">Communication University of China</h5>
                     </div>
                     <div class="col-sm-auto">
@@ -120,11 +120,11 @@
                     <h5 class="text-center">PrimeVision</h5>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-center"><a class="text-center">Yihan Lin</a></h4>
+                    <h4 class="text-center"><a class="text-center">Yihan Lin$^*$</a></h4>
                     <h5 class="text-center">Xiamen University</h5>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-center"><a class="text-center">Rong Zhao</a></h4>
+                    <h4 class="text-center"><a class="text-center">Rong Zhao$^*$</a></h4>
                     <h5 class="text-center">Tsinghua University</h5>
                 </div>
             </div>
@@ -132,6 +132,11 @@
             <div class="row" style="margin-top: 16px; margin-bottom: 8px;">
                 <div class="col text-center">
                     <span style="font-size:1.6rem;font-weight:600;">Conference on Computer Vision and Pattern Recognition (CVPR) 2026</span>
+                </div>
+            </div>
+            <div class="row" style="margin-bottom: 8px;">
+                <div class="col text-center">
+                    <span style="font-size:1.1rem; color:#666;">$^\dagger$ equal contribution &nbsp;&nbsp; $^*$ corresponding author</span>
                 </div>
             </div>
         </div>
@@ -150,7 +155,7 @@
                     </svg>
                     Code
                 </a>
-                <a class="btn btn-light" role="button" href="https://github.com/Tianmouc">
+                <a class="btn btn-light" role="button" href="https://huggingface.co/datasets/mypThu/SportsSlomo-CVS">
                     <svg style="width:12px;height:12px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
                         <circle cx="12" cy="12" r="10" fill="#4caf50" />
                         <rect x="8" y="8" width="8" height="8" fill="#fff" />
@@ -339,11 +344,33 @@
         <button onclick="toggleDropdown('dropdown3')">Display / Hide</button>
         <div style="height: 16px;"></div>
             <div id="dropdown3" class="dropdown-content">
-
-            <div class="row captioned_videos">
+            <div class="row captioned_videos" style="margin-top: 8px; text-align: center; font-weight: 600; ">
+                <div class="col-3">Input</div>
+                <div class="col-3">Output</div>
+                <div class="col-3">TD</div>
+                <div class="col-3">SD</div>
+            </div>
+            <!-- <div class="row captioned_videos">
                 <div class="row" style="display:flex; justify-content:center;">
-                    <video style="width:80%;" loop autoplay muted>
-                        <source src="single_frame_to_video/single_frame_to video.mp4" type="video/mp4">
+                    <video style="width:100%;" loop autoplay muted>
+                        <source src="single_frame_to_video/sky.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div> -->
+            <div class="row captioned_videos" style="margin-top: 8px;">
+                <div class="col-12" style="padding: 4px; margin-bottom: 12px;">
+                    <video style="width:100%;" loop autoplay muted>
+                        <source src="single_frame_to_video/code.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-12" style="padding: 4px; margin-bottom: 12px;">
+                    <video style="width:100%;" loop autoplay muted>
+                        <source src="single_frame_to_video/sky.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="col-12" style="padding: 4px; margin-bottom: 12px;">
+                    <video style="width:100%;" loop autoplay muted>
+                        <source src="single_frame_to_video/flower.mp4" type="video/mp4">
                     </video>
                 </div>
             </div>
@@ -354,22 +381,7 @@
 
     <hr class="divider" />
 
-    <div class="container" style="max-width: 1024px;">
-        
-        <div class="row">
-            <div class="col">
-                <h2>Comparison on Real-World Data</h2>
-                <p>To ensure a fair comparison, all sensors capture the same scene from the same viewpoint with identical exposure settings. We evaluate existing deblurring methods using their official implementations and released pretrained models.</p>
-            </div>
-        <div style="text-align:center; margin-top:10px;">
-            <img src="figs/3cameras.png" alt="3 Cameras" style="max-width:90%; height:auto;" />
-        </div>
-        </div>
-
-
-
-
-    </div>
+  
     
 
 
