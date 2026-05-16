@@ -19,8 +19,11 @@
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
     <!-- Latex-like math font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=STIX+Two+Math|Latin+Modern+Math">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <style>
         .abstract-math {
             font-family: 'STIX Two Math', 'Latin Modern Math', 'Times New Roman', Times, serif;
@@ -94,11 +97,11 @@
             <!-- 第一排5人 -->
             <div class="row authors justify-content-between">
                 <div class="col-sm-auto">
-                    <h4 class="text-center"><a class="text-center" href="https://yapengmeng.github.io/" target="_blank" data-i18n="author_yapeng" rel="noopener noreferrer">Yapeng Meng</a>$^\dagger$</h4>
+                    <h4 class="text-center"><a class="text-center" href="https://yapengmeng.github.io/" target="_blank" data-i18n="author_yapeng" rel="noopener noreferrer">Yapeng Meng</a><sup>†</sup></h4>
                     <h5 class="text-center" data-i18n="tsinghua_university">Tsinghua University</h5>
                 </div>
                 <div class="col-sm-auto">
-                    <h4 class="text-center"><a class="text-center" href="https://linyang2004.github.io/" target="_blank" data-i18n="author_linyang" rel="noopener noreferrer">Lin Yang</a>$^\dagger$</h4>
+                    <h4 class="text-center"><a class="text-center" href="https://linyang2004.github.io/" target="_blank" data-i18n="author_linyang" rel="noopener noreferrer">Lin Yang</a><sup>†</sup></h4>
                     <h5 class="text-center" data-i18n="communication_university">Communication University of China</h5>
                 </div>
                 <div class="col-sm-auto">
@@ -127,12 +130,12 @@
                     <h5 class="text-center" data-i18n="primevision">PrimeVision</h5>
                 </div>
                 <div class="col-sm-3">
-                    <!-- <h4 class="text-center"><a class="text-center">Yihan Lin$^*$</a></h4> -->
-                    <h4 class="text-center"><a class="text-center" href="https://lyh983012.github.io" target="_blank" data-i18n="author_yihan" rel="noopener noreferrer">Yihan Lin</a>$^*$</h4>
+                    <!-- <h4 class="text-center"><a class="text-center">Yihan Lin<sup>*</sup></a></h4> -->
+                    <h4 class="text-center"><a class="text-center" href="https://lyh983012.github.io" target="_blank" data-i18n="author_yihan" rel="noopener noreferrer">Yihan Lin</a>*</h4>
                     <h5 class="text-center" data-i18n="xiamen_university">Xiamen University</h5>
                 </div>
                 <div class="col-sm-3">
-                    <h4 class="text-center"><a class="text-center" data-i18n="author_rongzhao">Rong Zhao</a>$^*$</h4>
+                    <h4 class="text-center"><a class="text-center" data-i18n="author_rongzhao">Rong Zhao</a>*</h4>
                     <h5 class="text-center" data-i18n="tsinghua_university">Tsinghua University</h5>
                 </div>
             </div>
@@ -144,32 +147,103 @@
             </div>
             <div class="row" style="margin-bottom: 8px;">
                 <div class="col text-center">
-                    <span style="font-size:1.1rem; color:#666;" data-i18n="author_notes">$^\dagger$ equal contribution &nbsp;&nbsp; $^*$ corresponding author</span>
+                    <span style="font-size:1.1rem; color:#666;" data-i18n="author_notes"><sup>†</sup> equal contribution &nbsp;&nbsp; * corresponding author</span>
                 </div>
             </div>
         </div>
 
+
+
         <div class="container" style="max-width: 1024px;">
             <div class="buttons" style="margin-bottom: 8px;">
-                <a class="btn btn-light" role="button" href="https://github.com/Tianmouc">
-                    <svg style="width:12px;height:12px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
-                        <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
-                    </svg>
-                    <span data-i18n="tianmouc_btn">TianMouCV</span>
-                </a>
-                <a class="btn btn-light" role="button" href="https://github.com/linyang2004/tmcDeblur">
-                    <svg style="width:12px;height:12px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
-                        <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "/>
-                    </svg>
-                    <span data-i18n="code_btn">Code</span>
-                </a>
-                <a class="btn btn-light" role="button" href="https://huggingface.co/datasets/mypThu/SportsSlomo-CVS">
-                    <svg style="width:12px;height:12px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="10" fill="#4caf50" />
-                        <rect x="8" y="8" width="8" height="8" fill="#fff" />
-                    </svg>
-                    <span data-i18n="dataset_btn">Dataset</span>
-                </a>
+                <span class="link-block" style="margin-right: 0.5rem;">
+                    <a href="https://github.com/Tianmouc" class="btn btn-dark btn-sm rounded-pill external-link" role="button" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color:#111; border-color:#111; color:#fff;font-size:1.1rem;padding:0.8rem 1rem;">
+                        <span class="icon"><i class="fab fa-github" style="color:#fff;font-size:1.1rem;"></i></span>
+                        <span data-i18n="tianmouc_btn">TianMouCV</span>
+                    </a>
+                </span>
+
+                <span class="link-block">
+                    <a href="https://arxiv.org/abs/2604.10554" class="btn btn-dark btn-sm rounded-pill external-link" role="button"
+                    style="
+                        display:inline-flex;
+                        align-items:center;
+                        gap:0.5rem;
+                        background-color:#111;
+                        border-color:#111;
+                        color:#fff;
+                        font-size:1.1rem;
+                        padding:0.8rem 1rem;
+                    ">
+
+                        <span class="icon">
+                            <i class="ai ai-arxiv" style="color:#fff;font-size:1.1rem;"></i>
+                        </span>
+
+                        <span>arXiv</span>
+                    </a>
+                </span>
+
+                <span class="link-block" style="margin-right: 0.5rem;">
+                    <a href="https://github.com/linyang2004/tmcDeblur" class="btn btn-dark btn-sm rounded-pill external-link" role="button" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color:#111; border-color:#111; color:#fff;font-size:1.1rem;padding:0.8rem 1rem;">
+                        <span class="icon"><i class="fas fa-code" style="color:#fff;font-size:1.1rem;"></i></span>
+                        <span data-i18n="code_btn">Code</span>
+                    </a>
+                </span>
+                <span class="link-block">
+                    <a href="https://huggingface.co/datasets/mypThu/SportsSlomo-CVS" class="btn btn-dark btn-sm rounded-pill external-link" role="button" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color:#111; border-color:#111; color:#fff;font-size:1.1rem;padding:0.8rem 1rem;">
+                        <span class="icon"><i class="fas fa-database" style="color:#fff;font-size:1.1rem;"></i></span>
+                        <span data-i18n="dataset_btn">Dataset</span>
+                    </a>
+                </span>
+
+                <span class="link-block" style="margin-right: 0.5rem;">
+                    <a href="https://tmcdeblur.github.io/"
+                    class="btn btn-dark btn-sm rounded-pill external-link"
+                    role="button"
+                    style="
+                        display:inline-flex;
+                        align-items:center;
+                        gap:0.5rem;
+                        background-color:#111;
+                        border-color:#111;
+                        color:#fff;
+                        font-size:1.1rem;
+                        padding:0.8rem 1rem;
+                    ">
+
+                        <span class="icon">
+                            <i class="fas fa-file-pdf" style="color:#fff;font-size:1.1rem;"></i>
+                        </span>
+
+                        <span>Poster</span>
+                    </a>
+                </span>
+
+                <span class="link-block">
+                    <a href="https://tmcdeblur.github.io/"
+                    class="btn btn-dark btn-sm rounded-pill external-link"
+                    role="button"
+                    style="
+                        display:inline-flex;
+                        align-items:center;
+                        gap:0.5rem;
+                        background-color:#111;
+                        border-color:#111;
+                        color:#fff;
+                        font-size:1.1rem;
+                        padding:0.8rem 1rem;
+                    ">
+
+                        <span class="icon">
+                            <i class="fas fa-circle-play" style="color:#fff;font-size:1.1rem;"></i>
+                        </span>
+
+                        <span>Video</span>
+                    </a>
+                </span>
+
+
             </div>
         </div>
 
@@ -554,8 +628,8 @@
                 zh: '厦门大学'
             },
             author_notes: {
-                en: '$^\\dagger$ equal contribution &nbsp;&nbsp; $^*$ corresponding author',
-                zh: '$^\\dagger$ 同等贡献 &nbsp;&nbsp; $^*$ 通讯作者'
+                en: '<sup>†</sup> equal contribution &nbsp;&nbsp; * corresponding author',
+                zh: '<sup>†</sup> 同等贡献 &nbsp;&nbsp; * 通讯作者'
             }
             // TODO: 后续补充其他词条（加 data-i18n 属性）
         };
