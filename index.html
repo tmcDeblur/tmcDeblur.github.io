@@ -67,6 +67,7 @@
 
     <script src="assets/js/video_comparison.js"></script>
     <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
         .dropdown-content {
@@ -190,11 +191,47 @@
                         <span data-i18n="code_btn">Code</span>
                     </a>
                 </span>
-                <span class="link-block">
-                    <a href="https://huggingface.co/datasets/mypThu/SportsSlomo-CVS" class="btn btn-dark btn-sm rounded-pill external-link" role="button" style="display: inline-flex; align-items: center; gap: 0.5rem; background-color:#111; border-color:#111; color:#fff;font-size:1.1rem;padding:0.8rem 1rem;">
-                        <span class="icon"><i class="fas fa-database" style="color:#fff;font-size:1.1rem;"></i></span>
+
+                <span class="link-block dropdown">
+                    <a class="btn btn-dark btn-sm rounded-pill dropdown-toggle external-link"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    style="display: inline-flex;
+                            align-items: center;
+                            gap: 0.5rem;
+                            background-color:#111;
+                            border-color:#111;
+                            color:#fff;
+                            font-size:1.1rem;
+                            padding:0.8rem 1rem;">
+
+                        <span class="icon">
+                            <i class="fas fa-database"
+                            style="color:#fff;font-size:1.1rem;"></i>
+                        </span>
+
                         <span data-i18n="dataset_btn">Dataset</span>
                     </a>
+
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                        <li>
+                            <a class="dropdown-item"
+                            href="https://huggingface.co/datasets/mypThu/SportsSlomo-CVS"
+                            target="_blank">
+                                SportsSloMo-CVS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item"
+                            href="https://huggingface.co/datasets/mypThu/CVSRealData"
+                            target="_blank">
+                                CVSRealData
+                            </a>
+                        </li>
+                    </ul>
                 </span>
 
                 <span class="link-block" style="margin-right: 0.5rem;">
@@ -216,7 +253,7 @@
                             <i class="fas fa-file-pdf" style="color:#fff;font-size:1.1rem;"></i>
                         </span>
 
-                        <span>Poster</span>
+                        <span data-i18n="poster_btn">Poster</span>
                     </a>
                 </span>
 
@@ -239,7 +276,7 @@
                             <i class="fas fa-circle-play" style="color:#fff;font-size:1.1rem;"></i>
                         </span>
 
-                        <span>Video</span>
+                        <span data-i18n="video_btn">Video</span>
                     </a>
                 </span>
 
@@ -578,6 +615,15 @@
             dataset_btn: {
                 en: 'Dataset',
                 zh: '数据集'
+            },
+            poster_btn: {
+                en: 'Poster',
+                zh: '海报'
+            },
+
+            video_btn: {
+                en: 'Video',
+                zh: '视频'
             },
             author_yapeng: {
                 en: 'Yapeng Meng',
